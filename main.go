@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/csv"
+	"github.com/tushar2708/altcsv"
 	"os"
 	"strings"
 )
@@ -14,7 +14,8 @@ func parseEnvLine(line string) (string, string) {
 }
 
 func main() {
-	csvWriter := csv.NewWriter(os.Stdout)
+	csvWriter := altcsv.NewWriter(os.Stdout)
+	csvWriter.AllQuotes = true
 	defer csvWriter.Flush()
 	csvWriter.Write([]string{"name", "value"})
 	for _, line := range os.Environ() {
