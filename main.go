@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/tushar2708/altcsv"
 	"os"
 	"strings"
+
+	"github.com/tushar2708/altcsv"
 )
 
 func parseEnvLine(line string) (string, string) {
